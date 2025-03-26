@@ -65,3 +65,26 @@ console.log(movieList);
 
 //Display the movie list
 document.getElementById('movie-list').innerHTML = movieList.map(movie => `<span class="note bold">${movie.movieID}: ${movie.title}, Year: ${movie.year}, Rating: ${movie.rating}`).join("<br></span>");
+
+
+//Step 03:
+// Use localeCompare() to sort the movie list by movieID (as a string)
+/**
+ * @function sortMovie
+ * @description Sort the movie list by movieID
+ * @memberof Movie
+ * @param {string} a - The first movieID
+ * @param {string} b - The second movieID
+ */
+function sortMovie() {
+  movieList.sort((a, b) => a.movieID.localeCompare(b.movieID));
+}
+sortMovie();
+
+//Display the movie list
+console.log(`Sorted Movie List:`);
+console.log(movieList);
+
+
+//Display the movie list
+document.getElementById('sorted-movie-list').innerHTML = movieList.map(movie => `<span class="note bold">${movie.movieID}: ${movie.title}, Year: ${movie.year}, Rating: ${movie.rating}`).join("<br></span>");
