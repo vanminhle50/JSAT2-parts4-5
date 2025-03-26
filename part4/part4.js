@@ -88,3 +88,122 @@ console.log(movieList);
 
 //Display the movie list
 document.getElementById('sorted-movie-list').innerHTML = movieList.map(movie => `<span class="note bold">${movie.movieID}: ${movie.title}, Year: ${movie.year}, Rating: ${movie.rating}`).join("<br></span>");
+
+
+//Step 04:
+// Binary Search Implementation
+/**
+ * @function binarySearch
+ * @description Perform a binary search on the movie list by movieID
+ * @memberof Movie
+ * @param {Array<Movie>} movieList - The list of movies
+ * @param {string} movieID - The movieID to search for
+ * @returns {number} - The index of the movie in the list
+ */
+function binarySearch(movieList, movieID) {
+  let begin = 0;
+  let end = movieList.length - 1;
+  
+  while (begin <= end) {
+    let mid = Math.floor((begin + end) / 2);
+    let comparison = movieList[mid].movieID.localeCompare(movieID);
+
+    if (comparison === 0) {
+      return mid;
+    } else if (comparison < 0) {
+      begin = mid + 1;
+    } else {
+      end = mid - 1;
+    }
+  }
+  
+  return -1;
+}
+
+// Sequential Search Implementation
+/**
+ * @function sequentialSearch
+ * @description Perform a sequential search on the movie list by movieID
+ * @memberof Movie
+ * @param {Array<Movie>} movieList - The list of movies
+ * @param {string} movieID - The movieID to search for
+ * @returns {number} - The index of the movie in the list
+ */
+function sequentialSearch(movieList, movieID) {
+  for (let i = 0; i < movieList.length; i++) {
+    if (movieList[i].movieID.localeCompare(movieID) === 0) {
+      return i; 
+    }
+  }
+  return -1;
+}
+
+
+// Test Binary Search Implementation
+console.log(`Search the movie with ID: use binary search algorithm`);
+// Test case 1: Search for a movie that exists in the list
+let movieIDTest ="A021";
+//Display the result to table with case 1
+if (binarySearch(movieList,movieIDTest)>-1){
+  //Display the result to console
+  console.log(`Search the movie with ID: ${movieIDTest} in movie list:`);
+  console.log(`Found it at the index: ${binarySearch(movieList, movieIDTest)}`);
+  //Display the result to table
+  document.getElementById('binarySearchResult').innerHTML=`Search the movie with ID: <span class="bold">${movieIDTest}</span> in movie list: <br> <span class="note bold">Found it at the index: ${binarySearch(movieList, movieIDTest)}`
+}else {
+  //Display the result to console
+  console.log(`Search the movie with ID: ${movieIDTest} in movie list:`);
+  console.log(`It's NOT FOUND`);
+  //Display the result to table
+  document.getElementById('binarySearchResult').innerHTML=`Search the movie with ID: <span class="bold">${movieIDTest}</span> in movie list: <br> It's <span class="note bold"> NOT FOUND</span>`
+}
+
+
+// Test case 2: Search for a movie that does not exist in the list
+movieIDTest ="A000";
+if (binarySearch(movieList,movieIDTest)>-1){
+  //Display the result to console
+  console.log(`Search the movie with ID: ${movieIDTest} in movie list:`);
+  console.log(`Found it at the index: ${binarySearch(movieList, movieIDTest)}`);
+  document.getElementById('binarySearchResult1').innerHTML=`Search the movie with ID: <span class="bold">${movieIDTest}</span> in movie list: <br> <span class="note bold">Found it at the index: ${binarySearch(movieList, movieIDTest)}`
+}else {
+  //Display the result to console
+  console.log(`Search the movie with ID: ${movieIDTest} in movie list:`);
+  console.log(`It's NOT FOUND`);
+  //Display the result to table
+  document.getElementById('binarySearchResult1').innerHTML=`Search the movie with ID: <span class="bold">${movieIDTest}</span> in movie list: <br> It's <span class="note bold"> NOT FOUND</span>`
+}
+
+// Test Sequential Search Implementation
+console.log(`Search the movie with ID: use sequential search algorithm`);
+movieIDTest ="S007";
+// Test case 1: Search for a movie that exists in the list
+if (sequentialSearch(movieList,movieIDTest)>-1){
+  //Display the result to console
+  console.log(`Search the movie with ID: ${movieIDTest} in movie list:`);
+  console.log(`Found it at the index: ${sequentialSearch(movieList, movieIDTest)}`);
+  //Display the result to table
+  document.getElementById('sequentialSearchResult').innerHTML=`Search the movie with ID: <span class="bold">${movieIDTest}</span> in movie list: <br> <span class="note bold">Found it at the index: ${sequentialSearch(movieList, movieIDTest)}`
+}else {
+  //Display the result to console
+  console.log(`Search the movie with ID: ${movieIDTest} in movie list:`);
+  console.log(`It's NOT FOUND`);
+  //Display the result to table
+  document.getElementById('sequentialSearchResult').innerHTML=`Search the movie with ID: <span class="bold">${movieIDTest}</span> in movie list: <br> It's <span class="note bold"> NOT FOUND</span>`
+}
+
+
+movieIDTest="D007";
+// Test case 2: Search for a movie that does not exist in the list
+if (sequentialSearch(movieList,movieIDTest)>-1){
+  //Display the result to console
+  console.log(`Search the movie with ID: ${movieIDTest} in movie list:`);
+  console.log(`Found it at the index: ${sequentialSearch(movieList, movieIDTest)}`);
+  document.getElementById('sequentialSearchResult1').innerHTML=`Search the movie with ID: <span class="bold">${movieIDTest}</span> in movie list: <br> <span class="note bold">Found it at the index: ${sequentialSearch(movieList, movieIDTest)}`
+}else {
+  //Display the result to console
+  console.log(`Search the movie with ID: ${movieIDTest} in movie list:`);
+  console.log(`It's NOT FOUND`);
+  //Display the result to table
+  document.getElementById('sequentialSearchResult1').innerHTML=`Search the movie with ID: <span class="bold">${movieIDTest}</span> in movie list: <br> It's <span class="note bold"> NOT FOUND</span>`
+}
