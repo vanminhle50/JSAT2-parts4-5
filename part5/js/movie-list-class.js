@@ -43,15 +43,6 @@ class MovieManager {
      * @param {Array<object>} movieList: The array in which each element is a movie object with movie ID, title, release year, and rating properties.
      */
     displayData(movieList) {
-
-        /* First method (using innerHTML) is quick and suitable for small programs without security concerns. 
-           However, it can expose the app to XSS (Cross-Site Scripting) attacks and remove event listeners from child elements. 
-           Use it for trusted data and simple updates. 
-                this.rootID.innerHTML = '';
-                this.movieList.forEach(movie => this.rootID.innerHTML += `<tr><td>${movie.movieID}</td><td>${movie.title}</td><td>${movie.year}</td><td>${movie.rating}</td></tr>`);
-        */
-
-        //Second method: DOM Manipulation (Using DOM API (Document Object Model Application Programming Interface) to create HTML elements in JavaScipt )
         //Step 01: CLEAR DATA IN TABLE
         // Get childNodes variation is HTMLCollection of all <tr></tr> elements
         let childNodes = this.rootID.getElementsByTagName('tr');

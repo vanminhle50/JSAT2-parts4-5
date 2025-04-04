@@ -7,7 +7,6 @@
 // Student ID: 100693330
 // ---------------------------------------------------------------------
 
-// Step 1:
 /**
  * @class Movie
  * @classdesc A class representing a movie.
@@ -34,7 +33,6 @@ const classDefinition = Movie.toString();
 //Display the class definition on the HTML page
 document.getElementById('movie-object').textContent = classDefinition;
 
-//Step 02:
 // Create an array of at least 10 movies with mock values
 /**
   * @description movieList - An array of 10 movies with
@@ -67,7 +65,6 @@ console.log(movieList);
 document.getElementById('movie-list').innerHTML = movieList.map(movie => `<span class="note bold">${movie.movieID}: ${movie.title}, Year: ${movie.year}, Rating: ${movie.rating}`).join("<br></span>");
 
 
-//Step 03:
 // Use localeCompare() to sort the movie list by movieID (as a string)
 /**
  * @function sortMovie
@@ -90,7 +87,6 @@ console.log(movieList);
 document.getElementById('sorted-movie-list').innerHTML = movieList.map(movie => `<span class="note bold">${movie.movieID}: ${movie.title}, Year: ${movie.year}, Rating: ${movie.rating}`).join("<br></span>");
 
 
-//Step 04:
 // Binary Search Implementation
 /**
  * @function binarySearch
@@ -148,8 +144,9 @@ if (binarySearch(movieList,movieIDTest)>-1){
   //Display the result to console
   console.log(`Search the movie with ID: ${movieIDTest} in movie list:`);
   console.log(`Found it at the index: ${binarySearch(movieList, movieIDTest)}`);
+  console.log(`It's FOUND: Title ${movieList[binarySearch(movieList, movieIDTest)].title} Year: ${movieList[binarySearch(movieList, movieIDTest)].year} Rating: ${movieList[binarySearch(movieList, movieIDTest)].rating}`);
   //Display the result to table
-  document.getElementById('binarySearchResult').innerHTML=`Search the movie with ID: <span class="bold">${movieIDTest}</span> in movie list: <br> <span class="note bold">Found it at the index: ${binarySearch(movieList, movieIDTest)}`
+  document.getElementById('binarySearchResult').innerHTML=`Search the movie with ID: <span class="bold">${movieIDTest}</span> in movie list: <br> <span class="note bold">Found it at the index: ${binarySearch(movieList, movieIDTest)}<br> Details: ${movieList[binarySearch(movieList, movieIDTest)].title}, Year: ${movieList[binarySearch(movieList, movieIDTest)].year}, Rating: ${movieList[binarySearch(movieList, movieIDTest)].rating}`
 }else {
   //Display the result to console
   console.log(`Search the movie with ID: ${movieIDTest} in movie list:`);
@@ -165,7 +162,9 @@ if (binarySearch(movieList,movieIDTest)>-1){
   //Display the result to console
   console.log(`Search the movie with ID: ${movieIDTest} in movie list:`);
   console.log(`Found it at the index: ${binarySearch(movieList, movieIDTest)}`);
-  document.getElementById('binarySearchResult1').innerHTML=`Search the movie with ID: <span class="bold">${movieIDTest}</span> in movie list: <br> <span class="note bold">Found it at the index: ${binarySearch(movieList, movieIDTest)}`
+  console.log(`It's FOUND: Title: ${movieList[binarySearch(movieList, movieIDTest)].title} Year: ${movieList[binarySearch(movieList, movieIDTest)].year} Rating: ${movieList[binarySearch(movieList, movieIDTest)].rating}`);
+  //Display the result to table
+  document.getElementById('binarySearchResult1').innerHTML=`Search the movie with ID: <span class="bold">${movieIDTest}</span> in movie list: <br> <span class="note bold">Found it at the index: ${binarySearch(movieList, movieIDTest)}<br> Details: ${movieList[binarySearch(movieList, movieIDTest)].title}, Year: ${movieList[binarySearch(movieList, movieIDTest)].year}, Rating: ${movieList[binarySearch(movieList, movieIDTest)].rating}`
 }else {
   //Display the result to console
   console.log(`Search the movie with ID: ${movieIDTest} in movie list:`);
@@ -182,8 +181,9 @@ if (sequentialSearch(movieList,movieIDTest)>-1){
   //Display the result to console
   console.log(`Search the movie with ID: ${movieIDTest} in movie list:`);
   console.log(`Found it at the index: ${sequentialSearch(movieList, movieIDTest)}`);
+  console.log(`It's FOUND: Title: ${movieList[sequentialSearch(movieList, movieIDTest)].title} Year: ${movieList[sequentialSearch(movieList, movieIDTest)].year} Rating: ${movieList[sequentialSearch(movieList, movieIDTest)].rating}`);
   //Display the result to table
-  document.getElementById('sequentialSearchResult').innerHTML=`Search the movie with ID: <span class="bold">${movieIDTest}</span> in movie list: <br> <span class="note bold">Found it at the index: ${sequentialSearch(movieList, movieIDTest)}`
+  document.getElementById('sequentialSearchResult').innerHTML=`Search the movie with ID: <span class="bold">${movieIDTest}</span> in movie list: <br> <span class="note bold">Found it at the index: ${sequentialSearch(movieList, movieIDTest)}<br> Details: ${movieList[sequentialSearch(movieList, movieIDTest)].title}, Year: ${movieList[sequentialSearch(movieList, movieIDTest)].year}, Rating: ${movieList[sequentialSearch(movieList, movieIDTest)].rating}`
 }else {
   //Display the result to console
   console.log(`Search the movie with ID: ${movieIDTest} in movie list:`);
@@ -199,7 +199,9 @@ if (sequentialSearch(movieList,movieIDTest)>-1){
   //Display the result to console
   console.log(`Search the movie with ID: ${movieIDTest} in movie list:`);
   console.log(`Found it at the index: ${sequentialSearch(movieList, movieIDTest)}`);
-  document.getElementById('sequentialSearchResult1').innerHTML=`Search the movie with ID: <span class="bold">${movieIDTest}</span> in movie list: <br> <span class="note bold">Found it at the index: ${sequentialSearch(movieList, movieIDTest)}`
+  console.log(`It's FOUND: Title ${movieList[sequentialSearch(movieList, movieIDTest)].title} Year: ${movieList[sequentialSearch(movieList, movieIDTest)].year} Rating: ${movieList[sequentialSearch(movieList, movieIDTest)].rating}`);
+  //Display the result to table
+  document.getElementById('sequentialSearchResult1').innerHTML=`Search the movie with ID: <span class="bold">${movieIDTest}</span> in movie list: <br> <span class="note bold">Found it at the index: ${sequentialSearch(movieList, movieIDTest)}<br> Details: ${movieList[sequentialSearch(movieList, movieIDTest)].title}, Year: ${movieList[sequentialSearch(movieList, movieIDTest)].year}, Rating: ${movieList[sequentialSearch(movieList, movieIDTest)].rating}`
 }else {
   //Display the result to console
   console.log(`Search the movie with ID: ${movieIDTest} in movie list:`);
