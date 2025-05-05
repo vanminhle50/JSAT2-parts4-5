@@ -2,13 +2,15 @@ body {
     font-family: 'Courier New', Courier, monospace;
     margin: 20px;
 }
-.header-content-wrap{
+
+.header-content-wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.2em;
     background-color: #f5f2f0;
 }
+
 h1 {
     text-align: center;
     color: white;
@@ -17,15 +19,19 @@ h1 {
     padding: 10px;
     border-radius: 30px;
 }
+
 .highlight-text {
-    color:yellow;
+    color: yellow;
 }
-.bold{
+
+.bold {
     font-weight: bold;
 }
-.note{
+
+.note {
     color: red;
 }
+
 .paragraph {
     font-size: 1.2em;
     line-height: 1.6em;
@@ -41,17 +47,19 @@ table {
     padding: 20px;
     margin-top: 20px;
 }
+
 thead {
-    background-color:seagreen;
+    background-color: seagreen;
     color: white;
     text-transform: uppercase;
 }
 
-th{
+th {
     text-align: center;
     padding: 10px;
     font-size: 1.2em;
 }
+
 td {
     border: 1px solid #ddd;
     padding: 10px;
